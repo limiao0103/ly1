@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <title>瑾乔金鸿官网</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/page.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+    <!--头部-->
+    <div id="header"></div>
+    <script>
+        $("#header").load("comment/header.html");
+    </script>
+
+
+    <!--banner 开始-->
+    <div class="banner" style="height: 500px" >
+        <a href="#" class="d1" style="background:url(picture/contact_banner.gif) 0 0 / 100% 100% no-repeat;height: 500px"></a>
+    </div>
+    <!--banner 结束-->
+
+    <!--新闻动态 开始-->
+    <div class="news w" >
+        <div class="title">
+            <p><span>Product center</span><span>产品中心</span></p>
+            <i></i>
+        </div>
+        <div class="box">
+<!--            <div class="top clearfix">-->
+<!--                <img src="picture/news_content1.gif" alt="">-->
+<!--            </div>-->
+            <div class="bottom clearfix hamburgermenu">
+                <div class="left Menu">
+                    <h3>托辊</h3>
+                    <ul>
+                        <li class="aaa">
+                            <a href="javascript:void(0)" suid="1">钢托辊</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="2">尼龙托辊</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="3">缓冲托辊</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="4">梳形托辊</a>
+                        </li>
+                    </ul>
+                    <h3>滚筒</h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" suid="5">传动滚筒</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="6">改向滚筒</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="7">电动滚筒</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="8">复合滚筒</a>
+                        </li>
+                    </ul>
+                    <h3>输送带</h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" suid="9">单一/多层织物芯输送带</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="10">钢丝绳芯输送带</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="11">花纹输送带</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="12"> 挡边输送带</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="13">耐高温输送</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="14">耐寒输送带</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="15"> 耐酸碱输送带</a>
+                        </li>
+                    </ul>
+                    <h3>清扫器</h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" suid="16">一道SYBC-FA型清扫器</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="17">二道SYBC-S型清扫器</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="18">空段SYBC-V型清扫器</a>
+                        </li>
+                    </ul>
+                    <h3><a href="javascript:void(0)" suid="19">缓冲床</a></h3>
+                    <h3>输送机整机</h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" suid="20">圆管式输送机</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="21">移动带式输送机</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="22">矿用固定带式输送机</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="23">可伸缩带式输送机</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="24">大倾角带式输送机</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" suid="25"> DTⅡ型带式输送机</a>
+                        </li>
+                    </ul>
+                    <h3><a href="javascript:void(0)" suid="26"> 液压调偏装置</a></h3>
+                </div>
+                <div class="right">
+                    <ul id="journalism"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新闻动态 结束-->
+
+    <!--尾部-->
+    <div class="footer" id="footer"></div>
+
+    <script>
+        $("#footer").load("comment/footer.html");
+    </script>
+
+</div>
+
+<script type="text/javascript">
+    var datas = 0;
+    $.ajax({
+        type: "GET",
+        url:"data/data.json",
+        dataType: "json",
+        async: true,
+        success: function(data) {
+            var topId = "";
+            $.each(data.topnews,function (i,n) {
+                topId += n["id"]
+            });
+            var titHtml = '';
+            $.each(data.news,function(i,n){
+                if(n["id"]==topId){
+                    titHtml +='<a href="http://www.silkwalks.com/news_detail.html?newsId='+n["id"]+'">'+
+                                    '<h4>'+ n["desc"]+'</h4>'+
+                                    '<p>'+ n["textTitle"]+'</p>'+
+                              '</a>'
+                }
+            });
+            $("#firstNews").html(titHtml);
+
+            datas = data.news;
+            options = {
+                "id": "page", //显示页码的元素
+                "data": datas, //需要显示的数据
+                "maxshowpageitem":3, //最多显示的页码个数
+                "pagelistcount": 10, //每页显示数据个数
+                "callBack": function(result) {
+                    var cHtml="";
+                    for(var i=0;i<result.length;i++){
+//                    <li><a href=""><p>中融国投集团与福建省招标采购集团签署战略合作协议</p><span>2018-04-03</span><i> &nbsp;>&nbsp;</i></a></li>
+                        cHtml+='<li><a href="news_detail.html?newsId='+result[i].id+'">'+
+                                '<p>'+ result[i].desc+'</p><span>'+ result[i].date+'</span><i> &nbsp;>&nbsp;</i>'+
+                                '</a></li>'
+                    }
+                    $("#demoContent").html(cHtml);//将数据增加到页面中
+                }
+            }; //只需设置options参数，即可使用插件
+            page.init(datas.length, 1, options); //插件初始化
+        },
+        error: function(jqXHR) {
+            alert("添加失败!" + jqXHR.status);
+        }
+
+    });
+    $(document).ready(function(){
+        $(".Menu h3").click(function () {
+            if ($(this).next("ul").css("display") == "block")
+                $(this).next("ul").slideUp();
+            else {
+                var uls = $(this).parent().children("ul");
+                uls.slideUp();
+                $(this).next("ul").slideDown();
+            }
+        });
+        $(".Menu").find('li').click(function () {
+            $(".Menu").find('li').removeClass('aaa')
+            $(this).addClass("aaa")
+        });
+        $.each($(".Menu").find('li'),function () {
+
+        })
+    });
+    $(function () {
+        var suid=1;
+        console.log(suid)
+        $(".Menu").find('a').click(function () {
+            suid = $(this).attr("suid")
+            $.ajax({
+                type:'get',
+                url:'data/data.json',
+                dataType:'json',
+                success:function(data,status){
+                    console.log(data)
+                    $.each(data.news, function(i,n) {
+                        console.log(data.news,"data.news")
+                        //根据id获取详情数据
+                        if(suid === n.id){
+                            var str = '<h4>'+n['desc']+'</h4>'+
+                                '<div class="text">'+n['text']+'</div>'
+                        }
+                        $('#journalism').html(str);
+                    });
+                }
+            })
+        });
+        $.ajax({
+            type:'get',
+            url:'data/data.json',
+            dataType:'json',
+            success:function(data,status){
+                console.log(data)
+                $.each(data.news, function(i,n) {
+                    console.log(data.news,"data.news")
+                    //根据id获取详情数据
+                    if('1' === n.id){
+                        var str = '<h4>'+n['desc']+'</h4>'+
+                            '<div class="text">'+n['text']+'</div>'
+                    }
+                    $('#journalism').html(str);
+                });
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<title>瑾乔金鸿官网</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/ajaxload.js"></script>
+	<!--<script src="js/jquery.flip.min.js"></script>-->
+	<script src="js/index.js"></script>
+
+</head>
+
+<body>
+<div class="wrap">
+	<!--头部-->
+	<div id="header"></div>
+	<script>
+		$("#header").load("comment/header.html");
+	</script>
+
+	<!--banner 开始-->
+	<div class="banner" style="height: 500px" >
+		<a href="#" class="d1" style="background:url(picture/partners_banner.gif) 0 0 / 100% 100% no-repeat;height: 500px"></a>
+	</div>
+	<!--banner 结束-->
+
+
+	<!--我们的服务 开始-->
+	<div class="culture w" >
+		<div class="title">
+			<p><span>Quality of service </span><span>质量服务</span></p>
+			<i></i>
+		</div>
+		<div class="box box2 clearfix">
+			<h4>实力保障 && 质量保障</h4>
+			<ul>
+				<li>
+					<div class="left">
+						<p>
+							<span>实力保障</span>
+							<span>MATERIALS--良好的售前、售中、售后的服务体系</span>
+						</p>
+					</div>
+					<div class="right">
+						<p>全天候服务：</p>
+						<p>如果出现任何问题，无论风雨、白昼、远近，只要客户拨响服务
+							热线，我司专业工程师会在2个小时内回复客户并在24小时内给出解
+							决方案。</p>
+						<p>全方位服务：</p>
+						<p>设计最佳配备，指导操作方法，提供产品的操作、安装手册，并提供安装指导视频、
+							免费技术指导培训及指导安排调试、安装服务。
+						</p>
+						<p>全身心服务：</p>
+						<p>耐心听取用户需求，关心用户切身利益。</p>
+
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<p>
+							<span>质量保障</span>
+							<span>MATERIALS------坚持以质量为本、诚信经营、服务至上，持续创新为经营理念</span>
+						</p>
+					</div>
+					<div class="right">
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p>坚持以质量为本、诚信经营、服务至上，持续创新为经营理念。</p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+	<!--我们的服务 结束-->
+
+	<!--尾部-->
+	<div class="footer" id="footer"></div>
+	<script>
+		$("#footer").load("comment/footer.html");
+	</script>
+</div>
+<script>
+	$().ready(function(){
+		$(".sponsorListHolder").eq(0).show();
+		$(".partners_tab span").mouseover(function(){
+			//通过 .index()方法获取元素下标，从0开始，赋值给某个变量
+			var _index = $(this).index();
+			//让内容框的第 _index 个显示出来，其他的被隐藏
+			$(".sponsorListHolder").eq(_index).show().siblings(".sponsorListHolder").hide();
+			//改变选中时候的选项框的样式，移除其他几个选项的样式
+			$(this).addClass("change").siblings(".partners_tab span").removeClass("change");
+		});
+	});
+</script>
+
+</body>
+</html>

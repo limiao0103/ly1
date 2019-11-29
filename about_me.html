@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <title>瑾乔金鸿官网</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+    <!--头部-->
+    <div id="header"></div>
+    <script>
+        $("#header").load("comment/header.html");
+    </script>
+
+    <!--banner 开始-->
+    <div class="banner" style="height: 500px" >
+        <a href="#" class="d1" style="background:url(picture/about_me_banner.gif) 0 0 / 100% 100% no-repeat;height: 500px"></a>
+    </div>
+    <!--banner 结束-->
+
+    <!--关于我们 开始-->
+    <div class="about_me w"  >
+        <div class="title">
+            <p><span>About us</span><span>关于我们</span></p>
+            <i></i>
+        </div>
+        <div class="box">
+            <!--<ul class="clearfix">
+                   <li><img src="picture/about_me_content1.gif" alt=""></li>
+                   <li><img src="picture/about_me_content2.gif" alt=""></li>
+                   <li><img src="picture/about_me_content3.gif" alt=""></li>
+                   <li><img src="picture/about_me_content4.gif" alt=""></li>
+               </ul>-->
+            <h4>河北瑾乔金鸿科技有限公司</h4>
+            <p style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;河北瑾乔金鸿科技有限公司是中国资深的服务供应商，主营：轴承、托辊、滚筒、输送带、阀门、五金交电、润滑油、钢材、家具、日用品等产品的经销批发的专业销售公司，其优惠的价格、优质的产品和服务吸引了众多客商，我公司用户遍布全国的各行各业。广泛应用于机械、电力、水泥、石化、造纸、纺织、铁路、汽车、冶金、设备制造等众多行业,质量为本，诚信经营、服务至上，持续创新是我们的宗旨，以多品种高质量的经营特色和薄利多销的原则，享受良好的经营信誉，博得广大客户的信任，我们专业的销售和技术团队为您提供最优的服务！竭诚欢迎广大的新、老客户来电洽谈合作！</p>
+<!--            <div class="video1" id="video1">-->
+<!--                <h4 style="text-align: left;font-size: 16px">半自动托辊生产线和自动化托辊生产线：  </h4>-->
+<!--                <img src="images/about_me/about_me1.jpg" alt="" style="width: 100%">-->
+<!--                <img src="images/about_me/about_me2.jpg" alt="" style="width: 100%">-->
+<!--                <h4 style="text-align: left;font-size: 16px">喷漆流水线：  </h4>-->
+<!--                <img src="images/about_me/about_me3.jpg" alt="" style="width: 100%">-->
+<!--                <h4 style="text-align: left;font-size: 16px">厂房照片：  </h4>-->
+<!--                <img src="images/about_me/about_me4.jpg" alt="" style="width: 100%">-->
+<!--            </div>-->
+        </div>
+    </div>
+        <!--关于我们 结束-->
+
+
+    <!--尾部-->
+    <div class="footer" id="footer"></div>
+    <script>
+        $("#footer").load("comment/footer.html");
+    </script>
+</div>
+<script>
+    //视频-->
+    var player1=document.getElementById("player1");
+    var videoBtn=document.getElementById("videoBtn");
+    var video = document.getElementById("video1");
+    var video1Box = document.getElementById("video1Box");
+    var mLoad2 = document.getElementById("mLoad2");
+    var mask = document.getElementById("mask");
+    var video1BoxMask = document.getElementById("video1BoxMask");
+    video.onmouseover=function () {
+        video1Box.style.display = 'block';
+        video.onclick=function(){
+            if(player1.paused){
+                player1.play();
+            }else{
+                player1.pause();
+            }
+        }
+        video1BoxMask.onclick=function(){
+            if(player1.paused){
+                player1.play();
+            }else{
+                player1.pause();
+            }
+        }
+    };
+    video.onmouseout=function () {
+        video1Box.style.display = 'none';
+    };
+    //点击播放按钮切换按钮图标
+    var flag = false;
+    videoBtn.onclick=function(){
+        if(flag)
+        {
+            document.getElementById("videoImg").src = "images/about_me/zt.png";
+            mLoad2.style.display = 'none';
+            flag=false;
+        }else {
+            document.getElementById("videoImg").src = "images/about_me/bf.png";
+            flag=true;
+        }
+
+    };
+    player1.onwaiting=function () {
+        mLoad2.style.display = 'block';
+        mask.style.display = 'block';
+
+    };
+    player1.onplaying =function () {
+        mLoad2.style.display = 'none';
+        mask.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
